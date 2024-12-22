@@ -1,0 +1,275 @@
+@charset "UTF-8";
+@import url(https://fonts.googleapis.com/css?family=Source+Code+Pro:200,300,regular,500,600,700,800,900,200italic,300italic,italic,500italic,600italic,700italic,800italic,900italic);
+@import url(https://fonts.googleapis.com/css?family=Roboto:100,100italic,300,300italic,regular,italic,500,500italic,700,700italic,900,900italic);
+/* Указываем box sizing */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: #FFFFFF;
+}
+
+/* Убираем внутренние отступы */
+ul[class],
+ol[class] {
+  padding: 0;
+}
+
+/* Убираем внешние отступы */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul[class],
+ol[class],
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Выставляем основные настройки по-умолчанию для body */
+body {
+  min-height: 100vh;
+  scroll-behavior: smooth;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* Удаляем стандартную стилизацию для всех ul и il, у которых есть атрибут class*/
+ul[class],
+ol[class] {
+  list-style: none;
+}
+
+/* Элементы a, у которых нет класса, сбрасываем до дефолтных стилей */
+a:not([class]) {
+  -webkit-text-decoration-skip: ink;
+          text-decoration-skip-ink: auto;
+}
+
+/* Упрощаем работу с изображениями */
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* Указываем понятную периодичность в потоке данных у article*/
+article > * + * {
+  margin-top: 1em;
+}
+
+/* Наследуем шрифты для инпутов и кнопок */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Удаляем все анимации и переходы для людей, которые предпочитай их не использовать */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+html {
+  font-family: "Roboto";
+  color: rgb(22, 21, 21);
+  background: #edede8;
+}
+
+.container {
+  max-width: 1920px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+@media (max-width: 1200px) {
+  .container {
+    padding: 0 20px;
+  }
+}
+html {
+  scroll-behavior: smooth;
+}
+
+.header {
+  font-family: "Source Code Pro", serif;
+  font-weight: 400;
+  padding: 20px 0;
+  background-color: #f2905d;
+  position: fixed;
+  z-index: 1000;
+  width: 100%;
+  height: 110px;
+}
+@media (max-width: 1200px) {
+  .header {
+    height: 90px;
+  }
+}
+@media (max-width: 1200px) {
+  .header {
+    height: 85px;
+  }
+}
+.header__wrapper {
+  font-size: 24px;
+  display: flex;
+  justify-content: space-between;
+  letter-spacing: 7px;
+}
+.header__menu {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.header__menu-item {
+  font-size: 24px;
+  text-align: right;
+  line-height: 24px;
+  cursor: pointer;
+}
+@media (max-width: 1200px) {
+  .header__menu-item {
+    font-size: 16px;
+    line-height: 16px;
+  }
+}
+@media (max-width: 500px) {
+  .header__menu-item {
+    font-size: 13px;
+    line-height: 13px;
+  }
+}
+.header__menu-item:hover {
+  transition: letter-spacing 1s ease;
+  letter-spacing: 12px;
+  border-bottom: 2px solid rgb(27, 27, 27);
+}
+
+.logo {
+  text-align: left;
+}
+.logo:hover {
+  border-bottom: none;
+}
+
+.anim-round {
+  transition: transform 0.1s linear;
+  display: inline-block;
+  color: rgba(255, 255, 255, 0.87);
+}
+
+.border-letter {
+  color: rgb(27, 27, 27);
+  border-bottom: 3px solid rgb(27, 27, 27);
+}
+
+main {
+  padding: 110px 0 0 0;
+}
+@media (max-width: 1200px) {
+  main {
+    padding: 90px 0 0 0;
+  }
+}
+@media (max-width: 1200px) {
+  main {
+    padding: 85px 0 0 0;
+  }
+}
+
+.hero {
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 80vh;
+}
+.hero::after {
+  position: absolute;
+  content: "#dis.mariem";
+  width: 150px;
+  right: 50px;
+  height: 1px;
+  background-color: rgb(27, 27, 27);
+  transform: rotate(-90deg);
+}
+@media (max-width: 900px) {
+  .hero::after {
+    top: 120px;
+    width: 50px;
+  }
+}
+.hero__title {
+  position: relative;
+  color: rgb(27, 27, 27);
+  font-size: 120px;
+  font-weight: 200;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 3s ease, transform 3s ease;
+}
+.hero__title::after {
+  position: absolute;
+  content: "";
+  width: 150px;
+  right: 50px;
+  height: 1px;
+  background-color: rgb(27, 27, 27);
+}
+.hero__title::before {
+  position: absolute;
+  content: "";
+  width: 250px;
+  left: 200px;
+  bottom: 0px;
+  height: 1px;
+  background-color: rgb(27, 27, 27);
+}
+@media (max-width: 1800px) {
+  .hero__title {
+    font-size: 100px;
+  }
+}
+@media (max-width: 1600px) {
+  .hero__title {
+    font-size: 80px;
+  }
+}
+@media (max-width: 1300px) {
+  .hero__title {
+    font-size: 50px;
+  }
+  .hero__title::after {
+    width: 50px;
+    right: 100px;
+  }
+  .hero__title::before {
+    width: 50px;
+    left: 0;
+  }
+}
+@media (max-width: 700px) {
+  .hero__title {
+    font-size: 25px;
+  }
+}
+
+.hero__title.visible {
+  opacity: 1;
+  transform: translateY(0);
+}/*# sourceMappingURL=style.css.map */

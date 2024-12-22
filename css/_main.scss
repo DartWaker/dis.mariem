@@ -1,0 +1,96 @@
+main {
+  padding: 110px 0 0 0;
+    @media (max-width:1200px) {
+      padding: 90px 0 0 0;
+    }
+    @media (max-width:1200px) {
+      padding: 85px 0 0 0;
+    }
+}
+
+.hero {
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 80vh;
+    @media (max-width:970px) {
+
+    }
+      &::after{
+        position: absolute;
+        content: '#dis.mariem';
+        width: 150px;
+        right: 50px;
+        height: 1px;
+        background-color: rgb(27, 27, 27);
+        transform: rotate(-90deg);
+      }
+      @media (max-width:900px){
+        &::after{
+          top: 120px;
+          width: 50px;
+        }
+      }
+		&__wrapper {
+
+		}
+
+		&__title {
+      position: relative;
+      color: rgb(27, 27, 27);
+      font-size: 120px;
+      font-weight: 200;
+      opacity: 0; 
+      transform: translateY(20px); 
+      transition: opacity 3s ease, transform 3s ease;
+      &::after{
+        position: absolute;
+        content: '';
+        width: 150px;
+        right: 50px;
+        height: 1px;
+        background-color: rgb(27, 27, 27);
+      }
+      &::before{
+        position: absolute;
+        content: '';
+        width: 250px;
+        left: 200px;
+        bottom: 0px;
+        height: 1px;
+        background-color: rgb(27, 27, 27);
+      }
+      @media (max-width: 1800px) {
+        font-size: 100px;
+      }
+      @media (max-width: 1600px) {
+        font-size: 80px;
+      }
+      @media (max-width: 1300px) {
+        font-size: 50px;
+        &::after{
+          width: 50px;
+          right: 100px; 
+        }
+        &::before {
+          width: 50px;
+          left: 0;
+        }
+      }
+      @media (max-width: 700px){
+        font-size: 25px;
+      }
+		}
+
+}
+.container {
+}
+
+.hero__title {
+
+}
+
+.hero__title.visible {
+  opacity: 1; 
+  transform: translateY(0); 
+}

@@ -1,0 +1,69 @@
+.header {
+	font-family: "Source Code Pro", serif;
+	font-weight: 400;
+	padding: 20px 0;
+  background-color: #f2905d;
+  position: fixed;
+	z-index: 1000;
+  width: 100%;
+	height: 110px;
+	@media (max-width:1200px) {
+		height: 90px;
+	}
+	@media (max-width:1200px) {
+		height: 85px;
+	}
+		&__wrapper {
+      font-size: 24px;
+			display: flex;
+			justify-content: space-between;
+			letter-spacing: 7px;
+		}
+
+		&__menu {
+			display: flex;
+			flex-direction: column;
+			gap: 20px
+		}
+
+		&__menu-item {
+			font-size: 24px;
+			text-align: right;
+			line-height: 24px;
+			cursor: pointer;
+			@media (max-width:1200px) {
+				font-size: 16px;
+				line-height: 16px;
+			}
+			@media (max-width:500px) {
+				font-size: 13px;
+				line-height: 13px;
+			}
+			&:hover{
+				transition: letter-spacing 1s ease;
+				letter-spacing: 12px;
+				border-bottom: 2px solid rgb(27, 27, 27);
+			}
+		}
+
+}
+.logo{
+	text-align: left;
+			&:hover{
+				border-bottom: none;
+			}
+}
+.container {
+}
+
+
+.anim-round {
+    transition: transform 0.1s linear;
+    display: inline-block; 
+		color: rgba(255, 255, 255, 0.87);
+}
+
+.border-letter{
+	color: rgb(27, 27, 27);
+	border-bottom: 3px solid rgb(27, 27, 27);
+}
